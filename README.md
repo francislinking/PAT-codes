@@ -1,1 +1,1 @@
-PTA problems coded by python3, C++
+PTA problems solved by python3, C++
