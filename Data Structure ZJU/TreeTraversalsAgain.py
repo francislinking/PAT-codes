@@ -7,24 +7,23 @@ def GetInput():
     while(M):
         input_str = input().split(' ')
         if input_str[0] == 'Push':
-            InOrderList.append(input_str[1])
+            PreOrderList.append(input_str[1])
             StackList.append(input_str[1])
         elif input_str[0] == 'Pop':
-            PreOrderList.append(StackList.pop())
+            InOrderList.append(StackList.pop())
         M -= 1
     return InOrderList,PreOrderList
 
 def PostOrderTraversal(InOrderList,PreOrderList):
     global PostOrderList
     if len(InOrderList) == len(PreOrderList) == 1:
-        #print(InOrderList[0])
-        PostOrderList.append(InOrderList[0])
+        PostOrderList.append(PreOrderList[0])
     else:
-        root = InOrderList[0]
-        index = PreOrderList.index(root)
+        root = PreOrderList[0]
+        index = InOrderList.index(root)
         
-        SubLeft_InOrder = InOrderList[1:index+1]
-        SubLeft_PreOrder = PreOrderList[0:index]
+        SubLeft_InOrder = InOrderList[0:index]
+        SubLeft_PreOrder = PreOrderList[1:index+1]
         if len(SubLeft_InOrder) == len(SubLeft_PreOrder) != 0:
             PostOrderTraversal(SubLeft_InOrder,SubLeft_PreOrder)
         
@@ -32,7 +31,6 @@ def PostOrderTraversal(InOrderList,PreOrderList):
         SubRight_PreOrder = PreOrderList[index+1::]
         if len(SubRight_InOrder) == len(SubRight_PreOrder) != 0:
             PostOrderTraversal(SubRight_InOrder,SubRight_PreOrder)
-        #print(root)
         PostOrderList.append(root)
 
 
