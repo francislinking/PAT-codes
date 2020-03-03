@@ -1,5 +1,5 @@
-def addSubNode(PostOrder, InOrder):
-    SubNode = []
+def addSubTree(PostOrder, InOrder):
+    SubTreeNode = []
 
     root = PostOrder[-1]
     index = InOrder.index(root)
@@ -10,11 +10,11 @@ def addSubNode(PostOrder, InOrder):
     SubRight_PostOrder = PostOrder[index:-1]
     
     if index !=0:
-        SubNode.append((SubLeft_PostOrder,SubLeft_InOrder))
+        SubTreeNode.append((SubLeft_PostOrder,SubLeft_InOrder))
     if index != len(InOrder)-1:
-        SubNode.append((SubRight_PostOrder,SubRight_InOrder))
+        SubTreeNode.append((SubRight_PostOrder,SubRight_InOrder))
 
-    return root, SubNode
+    return root, SubTreeNode
 
 
 N = int(input())
@@ -28,7 +28,7 @@ Left_Right = [(PostOrder,InOrder)]
 while(len(Left_Right)):
     subnode = []
     for node in Left_Right:
-        root, newsubnode = addSubNode(node[0], node[1])
+        root, newsubnode = addSubTree(node[0], node[1])
         subnode = subnode + newsubnode
         result.append(root)
     Left_Right = subnode
