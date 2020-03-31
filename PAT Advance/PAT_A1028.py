@@ -1,3 +1,7 @@
+'''
+列表按key值排序
+'''
+
 N, ref = map(int, input().split())
 
 records = []
