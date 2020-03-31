@@ -16,8 +16,8 @@ def eratosthenes(n):
 n=int(input())
 result = eratosthenes(n)
 #print(result)
-count = 0;
+count = 0
 for i in range(len(result) - 1):
     if result[i+1]-result[i]== 2:
-        count +=1;
+        count +=1
 print(count)
