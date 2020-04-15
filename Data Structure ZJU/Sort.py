@@ -1,7 +1,5 @@
 def swap(A,i,j):
-    temp = A[i]
-    A[i] = A[j]
-    A[j] = temp
+    A[i],A[j] = A[j], A[i]
 
 def bubble(A, N):
     for P in range(N)[::-1]:
@@ -150,6 +148,10 @@ def radixSort(A, N):
         for eachBucket in bucket:
             A.extend(eachBucket) 
         bucket = [[]for i in range(10)]
+    flag = len([x for x in A if x >=0])
+    tempA = A[flag:]+A[:flag]
+    for i in range(N):
+        A[i] = tempA[i]
 
 
 N = int(input())
