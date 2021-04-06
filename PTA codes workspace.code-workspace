@@ -5,6 +5,7 @@
 		}
 	],
 	"settings": {
-		"C_Cpp.default.intelliSenseMode": "gcc-x64"
+		"C_Cpp.default.intelliSenseMode": "gcc-x64",
+		"activestate.promptRuntimeCreation": false
 	}
 }
