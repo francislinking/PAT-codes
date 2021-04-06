@@ -4,21 +4,27 @@ b = input()
 L = max(len(d),len(a),len(b))
 a = a.zfill(L)
 b = b.zfill(L)
-out = []
 
-abdzip = list(zip(a,b,d))
+a = list(map(int,a))
+b = list(map(int,b))
+d = list(map(int,d))
 
+ans = [0]*L
 cin = 0
-for item in abdzip[::-1]:
-    x,y,z = map(int,item)
-    s = x + y + cin
-    if z == 0:
-        z = 10
-    cin = s // z
-    out.append(s % z)
 
-result = 0
-for i in range(L):
-    result = result + out[i]*10**i
+for i in range(L)[::-1]:
+    mod = 10 if d[i] == 0 else d[i]
+    s = a[i] + b[i] + cin
+    cin, ans[i] = divmod(s,mod)
 
-print(result)
+result = ''.join(map(str,ans))
+
+if cin != 0:
+    result = str(cin) + result
+    print(result)
+else:
+    result = result.lstrip('0')
+    if result:
+        print(result)
+    else:
+        print(0)
