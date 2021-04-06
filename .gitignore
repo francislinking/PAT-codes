@@ -272,17 +272,15 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
-Data Structure ZJU/ReversingLinkedList_cpp.exe
+
 Basic/tempCodeRunnerFile.py
 PAT Advance/tempCodeRunnerFile.py
 PAT Advance/tempCodeRunnerFile.py
 Data Structure ZJU/tempCodeRunnerFile.py
-Data Structure ZJU/FileTransfer.exe
-Data Structure ZJU/*.exe
-Data Structure ZJU/HuffmanCodes.exe
+
 PAT Basic/tempCodeRunnerFile.py
 
-PAT Basic/B1015.exe
+
 PAT Advance/tempCodeRunnerFile.py
 out.txt
 Ti_k.txt
@@ -290,3 +288,6 @@ Ti_n.txt
 Ti_nk.py
 PAT Advance/tempCodeRunnerFile.py
 ADSAA/IsItAnAVLTree.exe
+ADSAA/tempCodeRunnerFile.py
+
+*.exe
