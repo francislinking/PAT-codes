@@ -1,6 +1,7 @@
+from decimal import *
 N = int(input())
 
-line = [float(x) for x in input().split()]
+line = [Decimal(x) for x in input().split()]
 
 s = 0
 # for i in range(N):
@@ -10,6 +11,6 @@ s = 0
 #         # print(sum(line[i:j]))
 
 for i in range(N):
-    s = s + line[i]*()
+    s = s + line[i]*(i+1)*(N-i)
 
 print('{:.2f}'.format(s))
