@@ -291,3 +291,4 @@ ADSAA/IsItAnAVLTree.exe
 ADSAA/tempCodeRunnerFile.py
 
 *.exe
+.vscode/settings.json
